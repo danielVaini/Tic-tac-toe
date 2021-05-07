@@ -8,7 +8,7 @@
 body {
   width: 100%;
   height: 100vh;
-
+  background: linear-gradient(#624FF0, #3CD0FA);
   color: white;
 }
 
@@ -18,19 +18,30 @@ body {
 
   display: flex;
   align-items: center;
-  justify-content: center;
-  flex-direction: column;
+  
+ 
 
-  background-color: black;
 }
 
+.container .game {
+  width: 80%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 .container h1 {
   margin-bottom: 40px;
 }
 
-.end {
-  
+.container .end {
   margin-bottom: 40px;
+}
+
+.container .winner {
+  margin-top: 40px;
 }
 
 .container .grid {
@@ -45,4 +56,26 @@ body {
   height: 150px;
   font-size: 40px;
   font-weight: 700;
+  cursor: pointer;
+}
+
+.container .grid button:hover {
+
+}
+
+.container .menu {
+  width: 20%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background: #2fcefa;
+  
+}
+
+.container .menu input {
+  width: 100%;
+  height: 50px;
+
 }
