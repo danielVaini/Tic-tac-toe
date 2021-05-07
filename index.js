@@ -1,15 +1,32 @@
 const buttons = document.querySelectorAll('.option');
+//count of move
 let cont = 0;
+// a tie
 let end = document.querySelector('.end');
+let userWinner = document.querySelector('.winner')
 
 let array = [
   [0,0,0],
   [0,0,0],
   [0,0,0]
 ]
+let countXWin = 0
+let countOWin = 0
+let countParty = 0
+let xWin = document.querySelector('.x-win');
+let oWin = document.querySelector('.o-win');
+let numberParty = document.querySelector('.number-party');
+
+
+function refresScoreBoard(){
+  oWin.innerHTML = countOWin;
+  xWin.innerHTML = countXWin;
+  numberParty.innerHTML = countParty;
+}
 
 buttons.forEach(item => {
   item.addEventListener('click', () => {
+    console.log(winner(array))
     if(cont % 2 == 0){
       item.innerHTML = "X";
       item.disabled = true;
@@ -94,7 +111,7 @@ function verify(cont) {
   }
 }
 
-let userWinner = document.querySelector('.winner')
+
 
 function winner(array) {
   // X winner  line 1 -> <- 
@@ -103,6 +120,11 @@ function winner(array) {
     buttons.forEach(item => {
       item.disabled = true;
     })
+    countXWin++;
+    countParty++;
+    refresScoreBoard()
+    return true;
+    
   }
   // X winner  line 2 -> <- 
   if(array[1][0] == 'x' && array[1][1] == 'x' && array[1][2] == 'x'){
@@ -110,6 +132,10 @@ function winner(array) {
     buttons.forEach(item => {
       item.disabled = true;
     })
+   countXWin++;
+   countParty++;
+   refresScoreBoard()
+   return true;
   }
   // X winner  line 3 -> <- 
   if(array[2][0] == 'x' && array[2][1] == 'x' && array[2][2] == 'x'){
@@ -117,6 +143,10 @@ function winner(array) {
     buttons.forEach(item => {
       item.disabled = true;
     })
+   countXWin++;
+   countParty++;
+   refresScoreBoard()
+   return true;
   }
   // X winner column 1
   if(array[0][0] == 'x' && array[1][0] == 'x' && array[2][0] == 'x'){
@@ -124,6 +154,10 @@ function winner(array) {
     buttons.forEach(item => {
       item.disabled = true;
     })
+   countXWin++;
+   countParty++;
+   refresScoreBoard()
+   return true;
   }
   // X winner column 2
   if(array[0][1] == 'x' && array[1][1] == 'x' && array[2][1] == 'x'){
@@ -131,6 +165,10 @@ function winner(array) {
     buttons.forEach(item => {
       item.disabled = true;
     })
+   countXWin++;
+   countParty++;
+   refresScoreBoard()
+   return true;
   }
   // X winner column 3
   if(array[0][2] == 'x' && array[1][2] == 'x' && array[2][2] == 'x'){
@@ -138,6 +176,10 @@ function winner(array) {
     buttons.forEach(item => {
       item.disabled = true;
     })
+   countXWin++;
+   countParty++;
+   refresScoreBoard()
+   return true;
   }
   // X winner \
   if(array[0][0] == 'x' && array[1][1] == 'x' && array[2][2] == 'x'){
@@ -145,6 +187,10 @@ function winner(array) {
     buttons.forEach(item => {
       item.disabled = true;
     })
+   countXWin++;
+   countParty++;
+   refresScoreBoard()
+   return true;
   }
   // X winner /
   if(array[0][2] == 'x' && array[1][1] == 'x' && array[2][0] == 'x'){
@@ -152,6 +198,10 @@ function winner(array) {
     buttons.forEach(item => {
       item.disabled = true;
     })
+   countXWin++;
+   countParty++;
+   refresScoreBoard()
+   return true;
   }
 
    // O winner  line 1 -> <- 
@@ -160,6 +210,10 @@ function winner(array) {
     buttons.forEach(item => {
       item.disabled = true;
     })
+    countOWin++;
+    countParty++;
+    refresScoreBoard()
+    return true;
   }
   // O winner  line 2 -> <- 
   if(array[1][0] == 'o' && array[1][1] == 'o' && array[1][2] == 'o'){
@@ -167,6 +221,10 @@ function winner(array) {
     buttons.forEach(item => {
       item.disabled = true;
     })
+    countOWin++;
+    countParty++;
+    refresScoreBoard()
+    return true;
   }
   // o winner  line 3 -> <- 
   if(array[2][0] == 'o' && array[2][1] == 'o' && array[2][2] == 'o'){
@@ -174,6 +232,10 @@ function winner(array) {
     buttons.forEach(item => {
       item.disabled = true;
     })
+    countOWin++;
+    countParty++;
+    refresScoreBoard()
+    return true;
   }
   // o winner column 1
   if(array[0][0] == 'o' && array[1][0] == 'o' && array[2][0] == 'o'){
@@ -181,6 +243,10 @@ function winner(array) {
     buttons.forEach(item => {
       item.disabled = true;
     })
+    countOWin++;
+    countParty++;
+    refresScoreBoard()
+    return true;
   }
   // o winner column 2
   if(array[0][1] == 'o' && array[1][1] == 'o' && array[2][1] == 'o'){
@@ -188,6 +254,10 @@ function winner(array) {
     buttons.forEach(item => {
       item.disabled = true;
     })
+    countOWin++;
+    countParty++;
+    refresScoreBoard()
+    return true;
   }
   // o winner column 3
   if(array[0][2] == 'o' && array[1][2] == 'o' && array[2][2] == 'o'){
@@ -195,6 +265,10 @@ function winner(array) {
     buttons.forEach(item => {
       item.disabled = true;
     })
+    countOWin++;
+    countParty++;
+    refresScoreBoard()
+    return true;
   }
   // o winner \
   if(array[0][0] == 'o' && array[1][1] == 'o' && array[2][2] == 'o'){
@@ -202,6 +276,10 @@ function winner(array) {
     buttons.forEach(item => {
       item.disabled = true;
     })
+    countOWin++;
+    countParty++;
+    refresScoreBoard()
+    return true;
   }
   // o winner /
   if(array[0][2] == 'o' && array[1][1] == 'o' && array[2][0] == 'o'){
@@ -209,7 +287,12 @@ function winner(array) {
     buttons.forEach(item => {
       item.disabled = true;
     })
+    countOWin++;
+    countParty++;
+    refresScoreBoard()
+    return true;
   }
+  return false
 }
 
 const resetButton = document.querySelector('.reset')
@@ -229,6 +312,8 @@ function reset(){
     item.innerHTML = ""
     item.disabled = false
   })
+
+  userWinner.innerHTML = "-"
 }
 
 function pcTurn(array) {
