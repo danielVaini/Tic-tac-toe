@@ -9,22 +9,35 @@
 </head>
 <body>
   <div class="container">
-    <h1>Jogo da velha</h1>
-    <p class="end"></p>
-    <div class="grid">
-      <button class="1"></button>
-      <button class="2"></button>
-      <button class="3"></button>
-      <button class="4"></button>
-      <button class="5"></button>
-      <button class="6"></button>
-      <button class="7"></button>
-      <button class="8"></button>
-      <button class="9"></button>
-    </div>
-    <h2 class="winner"></h2>
-  </div>
+    <div class="game">
 
-  <script src="/index.js"></script>
-</body>
+      <h1>Jogo da velha</h1>
+      <p class="end"></p>
+      <div class="grid">
+        <button class="1 option"></button>
+        <button class="2 option"></button>
+        <button class="3 option"></button>
+        <button class="4 option"></button>
+        <button class="5 option"></button>
+        <button class="6 option"></button>
+        <button class="7 option"></button>
+        <button class="8 option"></button>
+        <button class="9 option"></button>
+      </div>
+      <h2 class="winner">
+        -
+      </h2>
+    </div>
+    <div class="menu">
+      <input type="checkbox"/>
+      <div class="statistics">
+        <p>Partidas jogadas: <span class="number-party"></span></p>
+        <p>X venceu: <span class="x-win"></span></p>
+        <p>O venceu: <span class="o-win"></span></p>
+      </div>
+    </div>
+    </div>
+    
+    <script src="/index.js"></script>
+  </body>
 </html>
