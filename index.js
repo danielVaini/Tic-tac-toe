@@ -1,4 +1,4 @@
-const buttons = document.querySelectorAll('button');
+const buttons = document.querySelectorAll('.option');
 let cont = 0;
 let end = document.querySelector('.end');
 
@@ -13,7 +13,7 @@ buttons.forEach(item => {
     if(cont % 2 == 0){
       item.innerHTML = "X";
       item.disabled = true;
-      switch (item.className) {
+      switch (item.className[0]) {
         case '1':
           array[0][0] = 'x'
           break;
@@ -45,12 +45,12 @@ buttons.forEach(item => {
       }
       cont++
       winner(array);
-      verify(cont);
+  
     }else {
      
       item.innerHTML = "O"
       item.disabled = true;
-      switch (item.className) {
+      switch (item.className[0]) {
         case '1':
           array[0][0] = 'o'
           break;
@@ -82,7 +82,7 @@ buttons.forEach(item => {
       }
       cont++
       winner(array);
-      verify(cont);
+     
     }
   })
 })
@@ -197,7 +197,7 @@ function winner(array) {
     })
   }
   // o winner \
-  if(array[0][0] == 'o' && array[1][1] == 'o' && array[1][2] == 'o'){
+  if(array[0][0] == 'o' && array[1][1] == 'o' && array[2][2] == 'o'){
     userWinner.innerHTML = "O venceu"
     buttons.forEach(item => {
       item.disabled = true;
@@ -211,4 +211,11 @@ function winner(array) {
     })
   }
 
+
+
+}
+
+
+function pcTurn(array) {
+  
 }
