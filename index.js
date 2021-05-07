@@ -210,11 +210,26 @@ function winner(array) {
       item.disabled = true;
     })
   }
-
-
-
 }
 
+const resetButton = document.querySelector('.reset')
+
+resetButton.addEventListener('click', () => {
+  reset()
+})
+
+function reset(){
+  array = [
+    [0,0,0],
+    [0,0,0],
+    [0,0,0]
+  ]
+
+  buttons.forEach(item => {
+    item.innerHTML = ""
+    item.disabled = false
+  })
+}
 
 function pcTurn(array) {
   
