@@ -56,7 +56,12 @@ body {
   height: 150px;
   font-size: 40px;
   font-weight: 700;
+
   cursor: pointer;
+
+  background-color: white;
+  outline: none;
+ 
 }
 
 .container .grid button:hover {
@@ -70,12 +75,38 @@ body {
   flex-direction: column;
   align-items: center;
 
-  background: #2fcefa;
+  background: white;
+
+  border-top-left-radius: 16px;
+  border-bottom-left-radius: 16px;
   
 }
 
-.container .menu input {
+.container .menu button {
   width: 100%;
   height: 50px;
+  
+  outline: none;
+  appearance: none;
+  border: none;
+  
+  cursor: pointer;
+  
+  background-color: #00a2ff;
+  
+  color: white;
+  font-size: 24px;
+  font-weight: 700;
+  
+  border-top-left-radius: 16px;
 
+  transition: all 0.5s;
+}
+
+.container .menu button:hover {
+  background-color: #119ae9;
+}
+
+.container .menu button:active {
+  border: 0.1px solid white;
 }
